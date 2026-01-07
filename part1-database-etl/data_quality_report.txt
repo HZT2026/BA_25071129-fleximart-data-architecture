@@ -1,0 +1,14 @@
+FlexiMart Data Quality Report
+===================================
+
+CUSTOMERS DATA
+Raw records: 26
+After cleaning: 20
+
+PRODUCTS DATA
+Raw records: 20
+After cleaning: 17
+
+SALES DATA
+Raw records: 41
+After cleaning: 35

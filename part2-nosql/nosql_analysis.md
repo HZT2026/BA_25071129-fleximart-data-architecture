@@ -1,0 +1,12 @@
+NoSQL Analysis Report
+Section A: Limitations of RDBMS
+
+Relational databases like MySQL are designed for structured, uniform tables, which makes handling products with vastly different attributes challenging. For example, laptops have specifications like RAM, processor, and storage, whereas shoes have size, color, and material. In a relational model, we would need multiple tables or many nullable columns, leading to sparse or complex schemas. Frequent schema changes are cumbersome: adding a new product type with unique attributes requires altering tables, which can disrupt existing data and require migrations. Additionally, storing customer reviews as nested or hierarchical data is inefficient; relational databases would require separate review tables with foreign keys, making queries for aggregated or embedded data complex and slower. These limitations make RDBMS less flexible when handling diverse product catalogs and evolving business requirements.
+
+Section B: NoSQL Benefits
+
+MongoDB, a document-oriented NoSQL database, addresses these RDBMS limitations. Its flexible schema allows each product document to store different attributes without altering a fixed table structure, making it easy to add new product types. Embedded documents enable storing customer reviews directly within product documents, preserving the hierarchical relationship and simplifying queries for products along with their reviews. MongoDB also supports horizontal scalability through sharding, allowing the database to handle large volumes of products, customers, and reviews efficiently across multiple servers. This combination of flexible document structure, embedded data, and scalable architecture makes MongoDB ideal for dynamic, heterogeneous product catalogs where both the data model and data volume frequently change.
+
+Section C: Trade-offs
+
+While MongoDB offers flexibility and scalability, it has trade-offs compared to MySQL. First, it lacks strong ACID transactions across multiple documents by default, which can compromise consistency in complex operations. Second, querying across embedded documents or performing complex joins is less efficient, as MongoDB is optimized for document-level access rather than relational queries. Additionally, data duplication can occur due to embedding, increasing storage requirements. These trade-offs mean that while MongoDB excels at flexibility and scalability, careful design is required to ensure data integrity and efficiency for operations that relational databases handle more naturally.
